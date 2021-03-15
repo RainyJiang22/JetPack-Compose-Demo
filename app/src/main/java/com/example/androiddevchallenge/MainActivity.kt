@@ -84,7 +84,7 @@ fun BannerItem(
             .shadow(20.dp)
     ) {
         Box(modifier = Modifier.clickable { /*TODO*/ }) {
-            val image = ImageBitmap.imageResource(R.drawable.lagotto_romagnolo)
+            val image = ImageBitmap.imageResource(R.drawable.ic_launcher_background)
             Image(
                 bitmap = image,
                 contentScale = ContentScale.Crop,
