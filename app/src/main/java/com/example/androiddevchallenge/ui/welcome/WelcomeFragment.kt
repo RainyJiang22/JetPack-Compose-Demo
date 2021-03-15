@@ -5,4 +5,7 @@ package com.example.androiddevchallenge.ui.welcome
  * @date 2021/3/15
  */
 class WelcomeFragment {
+
+
+
 }

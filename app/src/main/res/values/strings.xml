@@ -12,4 +12,8 @@
     <string name="app_name">AndroidDevChallenge</string>
 
     <string name="create_account">Create account</string>
+
+    <string name="login_in">Log in</string>
+
+    <string name="welcome_subtitle">Beautiful home garden solutions</string>
 </resources>

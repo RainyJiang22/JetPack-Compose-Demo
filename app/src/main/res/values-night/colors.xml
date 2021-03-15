@@ -16,4 +16,6 @@
   -->
 <resources>
     <color name="status_bar_color">#FF3F2C2C</color>
+
+    <color name="pink_900">#FF3F2C2C</color>
 </resources>

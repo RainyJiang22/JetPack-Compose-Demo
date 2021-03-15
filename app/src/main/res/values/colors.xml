@@ -18,5 +18,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
+    <color name="pink_100">#FFFFF1F1</color>
+
+    <color name="pink_900">#FF3F2C2C</color>
+
     <color name="status_bar_color">#FFFFF1F1</color>
 </resources>
