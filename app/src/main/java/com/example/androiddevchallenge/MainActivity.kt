@@ -42,15 +42,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.welcome.WelcomeScreenPreviewDark
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyTheme {
-                MyApp()
-            }
+            WelcomeScreenPreviewDark()
         }
     }
 }
@@ -135,8 +134,10 @@ fun BannerItem(
                 )
 
                 // puppy location
-                Text(text = "Guang Zhou",
-                    style = MaterialTheme.typography.body2)
+                Text(
+                    text = "Guang Zhou",
+                    style = MaterialTheme.typography.body2
+                )
             }
         }
     }
