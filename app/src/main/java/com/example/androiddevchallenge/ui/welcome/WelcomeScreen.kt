@@ -2,6 +2,7 @@ package com.example.androiddevchallenge.ui.welcome
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -126,7 +127,7 @@ private fun CreateAccount(modifier: Modifier, onClickItem: () -> Unit) {
             style = MaterialTheme.typography.subtitle1)
 
         Button(
-            onClick = { onClickItem.invoke() },
+            onClick = { },
             modifier = modifier
                 .fillMaxWidth()
                 .height(48.dp)
@@ -140,7 +141,10 @@ private fun CreateAccount(modifier: Modifier, onClickItem: () -> Unit) {
         }
         Text(
             modifier = Modifier
-                .padding(top = 20.dp),
+                .padding(top = 20.dp)
+                .clickable {
+                    onClickItem()
+                },
             text = stringResource(id = R.string.login_in),
             style = MaterialTheme.typography.button)
     }

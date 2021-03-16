@@ -88,7 +88,7 @@ object BrowserDataProvider {
         name = "Fiddle leaf tree",
         describe = "This is a description",
         images = listOf(
-            R.drawable.fiddle_leaf
+            R.drawable.fiddle_leaf_tree
         )
     )
 

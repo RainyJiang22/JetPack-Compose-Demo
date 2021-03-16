@@ -25,26 +25,26 @@ import com.example.androiddevchallenge.R
 
 private val DarkColorPalette = darkColors(
     primary = green900,
-    primaryVariant = green900,
+    primaryVariant = Purple700,
     secondary = green300,
     background = gray,
-    surface = green900,
+    surface = white150,
     onPrimary = white,
     onSecondary = gray,
     onBackground = white,
-    onSurface = white850
+    onSurface = white850,
 )
 
 private val LightColorPalette = lightColors(
-    primary = pink900,
-    primaryVariant = pink900,
+    primary = pink100,
+    primaryVariant = Purple700,
     secondary = pink900,
     background = white,
     surface = white850,
-    onPrimary = white,
+    onPrimary = gray,
     onSecondary = white,
     onBackground = gray,
-    onSurface = gray
+    onSurface = gray,
 )
 
 
