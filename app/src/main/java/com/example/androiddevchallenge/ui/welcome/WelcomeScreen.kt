@@ -12,7 +12,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.Navigation
 import com.example.androiddevchallenge.R
@@ -29,13 +28,20 @@ fun WelcomeScreen(vm: Navigation) = Branding(modifier = Modifier, vm)
 
 
 @Composable
-private fun Branding(modifier: Modifier = Modifier, vm: Navigation) {
-
-    val onClickItem: () -> Unit = remember { { vm.navigationToLogin() } }
+private fun WelcomeBackground(
+    modifier: Modifier,
+    lightTheme: Boolean = MaterialTheme.colors.isLight,
+    onClickItem: () -> Unit
+) {
+    val bgColor = if (lightTheme) {
+        pink100
+    } else {
+        green900
+    }
 
     Box(
         modifier = modifier
-            .fillMaxSize()
+            .background(bgColor)
             .fillMaxHeight()
             .fillMaxWidth()
     ) {
@@ -117,9 +123,7 @@ private fun CreateAccount(modifier: Modifier, onClickItem: () -> Unit) {
         Text(
             modifier = Modifier.padding(top = 8.dp),
             text = stringResource(id = R.string.welcome_subtitle),
-            style = MaterialTheme.typography.subtitle1,
-            color = white
-        )
+            style = MaterialTheme.typography.subtitle1)
 
         Button(
             onClick = { onClickItem.invoke() },
@@ -138,10 +142,18 @@ private fun CreateAccount(modifier: Modifier, onClickItem: () -> Unit) {
             modifier = Modifier
                 .padding(top = 20.dp),
             text = stringResource(id = R.string.login_in),
-            style = MaterialTheme.typography.button,
-            color = white
-        )
+            style = MaterialTheme.typography.button)
     }
+
+}
+
+
+@Composable
+private fun Branding(modifier: Modifier = Modifier, vm: Navigation) {
+
+    val onClickItem: () -> Unit = remember { { vm.navigationToLogin() } }
+
+    WelcomeBackground(modifier = modifier, onClickItem = { onClickItem() })
 
 }
 

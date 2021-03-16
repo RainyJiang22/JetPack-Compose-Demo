@@ -63,7 +63,7 @@ fun MyApp(vm: Navigation) {
 
             when (curScreen) {
                 is Screen.WelcomeScreen -> WelcomeScreen(vm)
-                is Screen.LoginScreen -> LoginScreen()
+                is Screen.LoginScreen -> LoginScreen(vm)
                 is Screen.HomeScreen -> HomeScreen()
             }
 

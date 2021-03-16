@@ -66,14 +66,13 @@ private fun BannerItem(
     onClick: () -> Unit
 ) {
 
-    MyTheme {
         Card(
             shape = MaterialTheme.shapes.small,
             modifier = modifier
                 .size(136.dp, 136.dp)
                 .shadow(10.dp)
         ) {
-            Box(modifier = Modifier.clickable { /*TODO*/ }) {
+            Box(modifier = Modifier.clickable { onClick() }) {
                 val image = ImageBitmap.imageResource(browser.images.first())
                 Image(
                     bitmap = image,
@@ -101,9 +100,6 @@ private fun BannerItem(
                     )
                 }
             }
-        }
-
-
     }
 }
 
@@ -111,5 +107,7 @@ private fun BannerItem(
 @Composable
 fun PreviewHorizontalListItem() {
     val browser = BrowserDataProvider.DesertChic
-    BannerItem(browser = browser, onClick = { /*TODO*/ })
+    MyTheme {
+        BannerItem(browser = browser, onClick = { /*TODO*/ })
+    }
 }

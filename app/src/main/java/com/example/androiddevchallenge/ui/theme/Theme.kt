@@ -36,12 +36,12 @@ private val DarkColorPalette = darkColors(
 )
 
 private val LightColorPalette = lightColors(
-    primary = pink100,
-    primaryVariant = pink100,
+    primary = pink900,
+    primaryVariant = pink900,
     secondary = pink900,
     background = white,
     surface = white850,
-    onPrimary = gray,
+    onPrimary = white,
     onSecondary = white,
     onBackground = gray,
     onSurface = gray
