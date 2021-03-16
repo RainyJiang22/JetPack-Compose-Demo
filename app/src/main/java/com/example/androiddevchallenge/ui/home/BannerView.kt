@@ -29,6 +29,8 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
  * @date 2021/3/15
  */
 
+
+// the horizontal BannerView of Browser
 @Composable
 fun BannerView(
     listState: LazyListState,
