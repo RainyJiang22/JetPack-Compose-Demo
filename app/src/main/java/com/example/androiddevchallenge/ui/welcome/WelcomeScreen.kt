@@ -151,7 +151,7 @@ private fun CreateAccount(modifier: Modifier, onClickItem: () -> Unit) {
 @Composable
 private fun Branding(modifier: Modifier = Modifier, vm: Navigation) {
 
-    val onClickItem: () -> Unit = remember { { vm.navigationToLogin() } }
+    val onClickItem: () -> Unit = remember { { vm.navigationToHome() } }
 
     WelcomeBackground(modifier = modifier, onClickItem = { onClickItem() })
 
