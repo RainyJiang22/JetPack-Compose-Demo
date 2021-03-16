@@ -16,4 +16,6 @@
     <string name="login_in">Log in</string>
 
     <string name="welcome_subtitle">Beautiful home garden solutions</string>
+
+    <string name="login_title">Log in with email</string>
 </resources>

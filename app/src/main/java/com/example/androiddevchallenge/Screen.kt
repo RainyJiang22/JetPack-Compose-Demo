@@ -5,6 +5,7 @@ package com.example.androiddevchallenge
  * @date 2021/3/15
  */
 sealed class Screen {
-   object WelcomeScreen: Screen()
-
+    object WelcomeScreen : Screen()
+    object LoginScreen : Screen()
+    object HomeScreen : Screen()
 }

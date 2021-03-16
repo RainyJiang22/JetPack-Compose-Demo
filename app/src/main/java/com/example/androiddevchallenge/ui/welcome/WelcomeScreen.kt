@@ -1,22 +1,20 @@
 package com.example.androiddevchallenge.ui.welcome
 
-import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.darkColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.androiddevchallenge.MainActivity
+import com.example.androiddevchallenge.Navigation
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.*
 
@@ -26,15 +24,17 @@ import com.example.androiddevchallenge.ui.theme.*
  *
  * the Welcome screen
  */
+@Composable
+fun WelcomeScreen(vm: Navigation) = Branding(modifier = Modifier, vm)
 
 
 @Composable
-private fun Branding(modifier: Modifier = Modifier) {
+private fun Branding(modifier: Modifier = Modifier, vm: Navigation) {
 
+    val onClickItem: () -> Unit = remember { { vm.navigationToLogin() } }
 
     Box(
         modifier = modifier
-            .background(green900)
             .fillMaxSize()
             .fillMaxHeight()
             .fillMaxWidth()
@@ -55,7 +55,7 @@ private fun Branding(modifier: Modifier = Modifier) {
                     .padding(start = 88.dp, top = 72.dp)
             )
 
-            CreateAccount(modifier = Modifier.padding(top = 48.dp))
+            CreateAccount(modifier = Modifier.padding(top = 48.dp), onClickItem)
         }
     }
 }
@@ -108,7 +108,7 @@ private fun AppStyle(
 
 
 @Composable
-private fun CreateAccount(modifier: Modifier) {
+private fun CreateAccount(modifier: Modifier, onClickItem: () -> Unit) {
 
 
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
@@ -122,7 +122,7 @@ private fun CreateAccount(modifier: Modifier) {
         )
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { onClickItem.invoke() },
             modifier = modifier
                 .fillMaxWidth()
                 .height(48.dp)
@@ -139,36 +139,9 @@ private fun CreateAccount(modifier: Modifier) {
                 .padding(top = 20.dp),
             text = stringResource(id = R.string.login_in),
             style = MaterialTheme.typography.button,
-            color = white,
-            onTextLayout = { onClick() }
+            color = white
         )
     }
 
 }
 
-
-private fun onClick() {
-
-    val intent = Intent()
-}
-
-
-@Composable
-@Preview(name = "Welcome light theme", widthDp = 360, heightDp = 640)
-fun WelcomeScreenPreviewLight() {
-    MyTheme {
-
-    }
-}
-
-@Composable
-@Preview(name = "Welcome dark theme", widthDp = 360, heightDp = 640)
-fun WelcomeScreenPreviewDark() {
-    MyTheme(darkTheme = true) {
-        Branding(
-            modifier = Modifier
-                .fillMaxWidth()
-        )
-
-    }
-}
