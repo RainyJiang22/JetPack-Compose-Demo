@@ -37,6 +37,8 @@ val pink900 = Color(0xFF3F2C2C)
 val white850 = Color(0xD9FFFFFF)
 val gray = Color(0xFF232323)
 
+val GrayCopy = Color(0xFF232323).copy(1.0f)
+
 //Dark
 val green900 = Color(0xE62D3B2D)
 val green300 = Color(0x4DB8C9B8)

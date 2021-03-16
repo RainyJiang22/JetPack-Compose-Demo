@@ -22,7 +22,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.bean.Browser
 import com.example.androiddevchallenge.data.BrowserDataProvider
+import com.example.androiddevchallenge.ui.theme.GrayCopy
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.theme.gray
 
 /**
  * @author jacky
@@ -68,40 +70,50 @@ private fun BannerItem(
     onClick: () -> Unit
 ) {
 
-        Card(
-            shape = MaterialTheme.shapes.small,
-            modifier = modifier
-                .size(136.dp, 136.dp)
-                .shadow(10.dp)
-        ) {
-            Box(modifier = Modifier.clickable { onClick() }) {
-                val image = ImageBitmap.imageResource(browser.images.first())
-                Image(
-                    bitmap = image,
-                    contentScale = ContentScale.Crop,
-                    contentDescription = null,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxHeight()
+
+    val lightTheme: Boolean = MaterialTheme.colors.isLight
+
+    val bannerBg = if (lightTheme) {
+        Color.White.copy(1.0f)
+    } else {
+        GrayCopy
+    }
+
+
+    Card(
+        shape = MaterialTheme.shapes.small,
+        modifier = modifier
+            .size(136.dp, 136.dp)
+            .shadow(10.dp)
+    ) {
+        Box(modifier = Modifier.clickable { onClick() }) {
+            val image = ImageBitmap.imageResource(browser.images.first())
+            Image(
+                bitmap = image,
+                contentScale = ContentScale.Crop,
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+            )
+
+            Column(
+                modifier = Modifier
+                    .background(bannerBg)
+                    .fillMaxWidth()
+                    .padding(10.dp)
+                    .height(20.dp)
+                    .align(Alignment.BottomStart)
+            ) {
+
+                Text(
+                    text = browser.name,
+                    style = MaterialTheme.typography.h2,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
                 )
-
-                Column(
-                    modifier = Modifier
-                        .background(Color.White.copy(alpha = 1.0f))
-                        .fillMaxWidth()
-                        .padding(10.dp)
-                        .height(20.dp)
-                        .align(Alignment.BottomStart)
-                ) {
-
-                    Text(
-                        text = browser.name,
-                        style = MaterialTheme.typography.h2,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                }
             }
+        }
     }
 }
 
