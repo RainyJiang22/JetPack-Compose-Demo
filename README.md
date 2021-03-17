@@ -2,7 +2,7 @@
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/vitaviva/Bloom/workflows/Check/badge.svg)
 ![](https://img.shields.io/badge/jetpack_compose-1.0.0_beta01-green.svg)
 
 ## :scroll: Description
